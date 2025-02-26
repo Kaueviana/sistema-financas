@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Financeiro</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <h2></h2>
+        </header>
+       
+    <main>
+        <h1>SISTEMA DE FINANÇAS</h1>
+        <div class="resumo">
+            <div>Entrada: R$ <span class="entradas">0.00</span></div>
+            <div>Saída: R$ <span class="saidas">0.00</span></div>
+            <div>Faturamento: R$ <span class="total">0.00</span></div>
+        </div>
+
+        <div class="novoItem">
+            <div class="descricao">
+                <label for="desc">Descrição</label>
+                <input class="c-desc"  type="text" id="desc">
+            </div>
+            <div class="valorT">
+                <label for="valo">Valor</label>
+                <input class="c-valor"  type="number" id="valo">
+            </div>
+            <div class="tipo">
+                <label for="type">Tipo</label>
+                <select class="c-tipo" id="type">
+                    <option>Entrada</option>
+                    <option>Saída</option>
+                </select>
+            </div>
+            <div class="data">
+                <label for="data">Data</label>
+                <input class="c-data" type="date" id="data" value="">
+            </div>
+            <button id="botaoN">Incluir</button>
+        </div>
+
+        <!-- Campos para filtragem por data -->
+
+        <h2 class="filtrar">FILTRAR MOVIMENTAÇÃO POR DATA</h2>
+        <div class="filtroData">
+            <div>
+                <label for="dataInicio">Data Início</label>
+                <input class="c-inicio" type="date" id="dataInicio">
+            </div>
+            <div>
+                <label for="dataFim">Data Fim</label>
+                <input class="c-fim" type="date" id="dataFim">
+            </div>
+            <button id="botaoFiltrar">Filtrar</button>
+        </div>
+
+        <div class="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th class="colunaValor">Valor</th>
+                        <th class="colunaTipo">Tipo</th>
+                        <th>Data</th>
+                        <th class="colunaAcao"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados adicionados dinamicamente -->
+                </tbody>
+            </table>
+            
+        </div>
+        
+        <div class="grafico">
+            <canvas id="graficoResumo" width="400" height="200"></canvas>
+        </div>
+        <div class="deta">
+
+            <button id="resumoDetalhado">Resumo Detalhado</button>
+           
+        </div>
+        <!-- Modal para exibir o resumo detalhado -->
+        </div>
+        <div id="modalResumo" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>RESUMO DETALHADO</h2>
+                <div>
+                    <h3>Entradas</h3>
+                    <ul id="detalhesEntradas"></ul>
+                </div>
+                <div>
+                    <h3>Saídas</h3>
+                    <ul id="detalhesSaidas"></ul>
+                <button id="exportarTexto">Exportar como Texto</button>
+                <button id="exportarCSV">Exportar como CSV</button>
+                </div>
+               </div>
+              
+         </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

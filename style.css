@@ -1,0 +1,391 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+  }
+  
+  .topo{
+    background-color: #2aada5;
+    box-shadow: #ff2a00;
+    height: 100vw;
+    width: 360px;
+    
+    
+  }
+  body{
+    background-color: #EEF1F6;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+  
+  main{
+    margin-right: 250px;
+    max-width: 550px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    margin-left: 290px;
+  }
+  
+  h1{
+    padding: 30px 0;
+    font-family: sans-serif;
+    color: rgb(33, 33, 35);
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+}
+ 
+  
+  .resumo{
+    display: flex;
+    padding: 15px 0;
+    gap: 40px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #ffffff;
+  }
+  .resumo > div{
+    background-color: #2aada5;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 5px #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+  }
+  .novoItem{
+    color: #000000;
+    display: flex;
+    gap: 10px;
+    align-items: end;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+  .descricao, .tipo, .valorT, .data {
+    display: flex;
+    flex-direction: column;
+   
+  }
+  .novoItem > button {
+    background-color: #2aada5;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 34px;
+
+  }
+  input, select{
+    padding: 5px;
+  }
+  /* Estilizando a tabela */
+  .tabela {
+    width: 100%;
+   /* Adiciona rolagem horizontal em telas menores */
+    padding: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaços entre as células */
+    background: white;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  /* Cabeçalho da tabela */
+  th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Linha separadora suave */
+  }
+  /* Colunas específicas */
+  .colunaValor {
+    text-align: right;
+
+    font-weight: bold;
+    width: 30px;
+  }
+  .colunaTipo {
+    text-align: center;
+    font-weight: bold;
+    width: 80px;
+  }
+  .colunaAcao {
+    text-align: center;
+    width: 40px;
+  }
+  .colunaAcao > button{
+    background-color: transparent;
+    border: none;
+  }
+  /* Alternância de cores nas linhas */
+  tbody tr:nth-child(even) {
+    background: #f8f9fa; /* Cinza claro */
+  }
+  /* Efeito hover */
+  tbody tr:hover {
+    background: #e9ecef; /* Destaque ao passar o mouse */
+    transition: background 0.3s ease-in-out;
+  }
+  /* Responsividade */
+  @media (max-width: 768px) {
+    th, td {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  i{
+    padding-right: 15px;
+    margin-left: 20px;
+    font-size: 25px;
+  }
+  .bx-chevron-up-circle {
+    color: green; /* Ícone para entrada */
+  }
+  .bx-chevron-down-circle {
+    color: red; /* Ícone para saída */
+  }
+  /* Estilização geral do modal */
+  .modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  }
+  /* Conteúdo do modal */
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  /* Botão de fechar */
+  .modal-content .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .modal-content .close:hover,
+  .modal-content .close:focus {
+    color: #000;
+    text-decoration: none;
+  }
+  /* Títulos no modal */
+  .modal-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+  }
+  /* Seções de detalhes */
+  .modal-content h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+  }
+  /* Listas de detalhes */
+  .modal-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .modal-content ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    color: #666;
+  }
+  .filtrar{
+    padding-top: 30px;
+    color: rgb(33, 33, 35);
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .modal-content ul li:last-child {
+    border-bottom: none;
+  }
+  /* Transições e animações */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  #modalResumo .modal-content {
+    position: relative;
+    padding: 30px;
+  }
+  #exportarTexto {
+    margin-top: 20px; /* Espaçamento do conteúdo acima */
+    display: block; /* Garante que fique separado */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto;
+    padding: 10px;
+    background-color: #2aada5;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #exportarCSV{
+    margin-top: 20px; /* Espaçamento do conteúdo acima */
+    display: block; /* Garante que fique separado */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto;
+    padding: 10px;
+    background-color: #2aada5;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+  }
+  .deta{
+    padding: 15px;
+  }
+  #resumoDetalhado{
+    background-color: rgb(240, 21, 25);
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 34px;
+    margin-left: 190px;
+  }
+  .grafico {
+    
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  table th:nth-child(4), table td:nth-child(4) {
+    text-align: center;
+    width: 120px;
+  }
+  .filtroData {
+    color: #000000;
+    display: flex;
+    gap: 10px;
+    align-items: end;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .filtroData > div {
+    display: flex;
+    flex-direction: column;
+  }
+  .filtroData > button {
+    background-color: #2aada5;
+    color: white;
+    border: none;
+    padding: 0 15px;    
+    border-radius: 5px;
+    cursor: pointer;
+    height: 34px;
+  }
+  .entradas{
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .saidas{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+
+  .total{
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .c-data{
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+
+  .c-desc{
+    border-radius: 5px;
+    border: none;
+    height: 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+
+  .c-valor{
+    border-radius: 5px;
+    border: none;
+    height: 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .c-tipo{
+    border-radius: 5px;
+    border: none;
+    height: 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+
+  .c-inicio{
+    border-radius: 5px;
+    border: none;
+    height: 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+
+  .c-fim{
+    border-radius: 5px;
+    border: none;
+    height: 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  
+  
+  
