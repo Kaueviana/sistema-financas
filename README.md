@@ -4,6 +4,15 @@
 
 O Sistema Financeiro é uma aplicação intuitiva e de fácil uso, desenvolvida para ajudar no controle de finanças pessoais ou empresariais. Com ele, é possível cadastrar entradas e saídas financeiras, atribuindo uma data e descrição para cada lançamento. Conforme os dados são inseridos, o sistema atualiza automaticamente uma tabela e calcula o faturamento total. Além disso, um gráfico é gerado para melhor visualização das movimentações.
 
+<h2> 🖥️ Sistema Financeiro </h2>
+
+![WhatsApp Image 2025-02-27 at 14 13 53 (1)](https://github.com/user-attachments/assets/7a852915-a8ec-4fa5-abea-0f281e4eea2c)
+
+![WhatsApp Image 2025-02-27 at 14 13 53](https://github.com/user-attachments/assets/76cd47c6-c269-424e-b4d3-9e3640962e8e)
+
+![WhatsApp Image 2025-02-27 at 14 13 52](https://github.com/user-attachments/assets/6a955277-9a16-4728-828e-245e1f303330)
+
+
 <h2> ⚠️ Problema e Solução Proposta </h2>
 
 Atualmente, muitas microempresas e indivíduos ainda gerenciam suas finanças de forma manual, utilizando anotações em papel ou planilhas simples. Esse método, além de ser suscetível a erros, como omissão de lançamentos ou cálculos incorretos, dificulta uma análise precisa da saúde financeira ao longo do tempo. Em um cenário onde a tecnologia está em constante avanço, a digitalização dos processos financeiros tornou-se essencial para garantir uma gestão eficiente e moderna.
